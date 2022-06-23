@@ -1,10 +1,13 @@
 {
-  "name": "redoc-cli",
-  "version": "0.13.8",
+  "name": "@stardustai/redoc-cli",
+  "version": "0.13.9",
   "description": "ReDoc's Command Line Interface",
   "main": "index.js",
   "bin": "index.js",
-  "repository": "https://github.com/Redocly/redoc",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stardustai/redoc"
+  },
   "author": "Roman Hotsiy <gotsijroman@gmail.com>",
   "license": "MIT",
   "engines": {
@@ -19,12 +22,13 @@
     "node-libs-browser": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "redoc": "2.0.0-rc.64",
+    "redoc": "npm:@stardustai/redoc@2.0.0-rc.65",
     "styled-components": "^5.3.0",
     "yargs": "^17.0.1"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@types/chokidar": "^2.1.3",

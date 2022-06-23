@@ -1,4 +1,3 @@
-import slugify from 'slugify';
 import { appendToMdHeading, mapWithLast, mergeObjects, safeSlugify, titleize } from '../helpers';
 
 describe('Utils', () => {
@@ -49,8 +48,6 @@ describe('Utils', () => {
       expect(willBeSlugifed).toEqual('some-string');
 
       const cannotBeSlugified = '가나다라 마바사';
-      // if slugify() fixes this issue, safeSlugify should be removed and replaced with original one.
-      expect(slugify(cannotBeSlugified)).toEqual('');
       expect(safeSlugify(cannotBeSlugified)).toEqual('가나다라-마바사');
     });
 
