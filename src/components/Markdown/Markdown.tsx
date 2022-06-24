@@ -11,6 +11,7 @@ export interface StylingMarkdownProps {
 export interface BaseMarkdownProps {
   sanitize?: boolean;
   source: string;
+  parentId?: string;
 }
 
 export type MarkdownProps = BaseMarkdownProps &
@@ -22,8 +23,8 @@ export type MarkdownProps = BaseMarkdownProps &
 
 export class Markdown extends React.Component<MarkdownProps> {
   render() {
-    const { source, inline, compact, className, 'data-role': dataRole } = this.props;
-    const renderer = new MarkdownRenderer();
+    const { source, inline, compact, className, 'data-role': dataRole, parentId } = this.props;
+    const renderer = new MarkdownRenderer(undefined, parentId);
     return (
       <SanitizedMarkdownHTML
         html={renderer.renderMd(source)}

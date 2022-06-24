@@ -28,7 +28,7 @@ export class AdvancedMarkdown extends React.Component<AdvancedMarkdownProps> {
       throw new Error('When using components in markdown, store prop must be provided');
     }
 
-    const renderer = new MarkdownRenderer(options);
+    const renderer = new MarkdownRenderer(options, this.props.parentId);
     const parts = renderer.renderMdWithComponents(source);
 
     if (!parts.length) {
